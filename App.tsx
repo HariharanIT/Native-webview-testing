@@ -53,8 +53,8 @@ enum DisplayWebView {
   empty = 0,
   turnkey = 1,
   turnkeyWithCustomization = 2,
-  embedSdk = 3,
-  embedSdkWithCustomization = 4,
+  embedSdkHost = 3,
+  embedSdkAttendee = 4,
 }
 
 const WebViewURL = [
@@ -62,7 +62,7 @@ const WebViewURL = [
   'https://conferencing.agora.io/',
   'https://sample-apps-bzgayvol9-hariharanits-projects.vercel.app/',
   'https://appbuilder-simple-practice-demo-git-native-webvi-b0be6a-agoraio.vercel.app/',
-  'https://appbuilder-simple-practice-demo-git-native-webvi-b0be6a-agoraio.vercel.app/',
+  'https://appbuilder-simple-practice-demo-git-native-webvi-f495fe-agoraio.vercel.app/',
 ];
 
 function App(): JSX.Element {
@@ -90,18 +90,18 @@ function App(): JSX.Element {
         />
         <View style={styles.spacer} />
         <Button
-          title="Open EmbedSdk"
+          title="Open EmbedSdk as Host"
           onPress={() => {
-            setWebView(DisplayWebView.embedSdk);
+            setWebView(DisplayWebView.embedSdkHost);
           }}
         />
         <View style={styles.spacer} />
-        {/* <Button
-          title="Open EmbedSdk with Customization"
+        <Button
+          title="Open EmbedSdk as Attendee"
           onPress={() => {
-            setWebView(DisplayWebView.embedSdkWithCustomization);
+            setWebView(DisplayWebView.embedSdkAttendee);
           }}
-        /> */}
+        />
       </View>
     );
   } else {
