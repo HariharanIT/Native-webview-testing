@@ -13,6 +13,7 @@ import {
   StyleSheet,
   View,
   Button,
+  SafeAreaView,
 } from 'react-native';
 import {WebView} from 'react-native-webview';
 
@@ -37,15 +38,21 @@ const RenderWebView = (props: {url: string}) => {
   }
 
   return (
-    <WebView
-      allowsInlineMediaPlayback
-      mediaPlaybackRequiresUserAction={false}
-      source={{
-        uri: props.url,
-      }}
-      // eslint-disable-next-line react-native/no-inline-styles
-      style={{flex: 1, height: height, width: width}}
-    />
+    <SafeAreaView style={{flex: 1, backgroundColor: '#1D1D1D'}}>
+      <WebView
+        allowsInlineMediaPlayback
+        mediaPlaybackRequiresUserAction={false}
+        source={{
+          uri: props.url,
+        }}
+        // eslint-disable-next-line react-native/no-inline-styles
+        style={{
+          flex: 1,
+          height: height,
+          width: width,
+        }}
+      />
+    </SafeAreaView>
   );
 };
 
